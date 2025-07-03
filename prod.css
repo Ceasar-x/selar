@@ -19,6 +19,14 @@ body {
   font-family: 'Pacifico', cursive;
   font-size: 28px;
 }
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.menu-toggle i{
+    color: white;
+}
 
 .nav-links {
   display: flex;
