@@ -414,8 +414,9 @@ body {
 
 /* toolsgrid */
 .tools-section {
+  width: 100%;
   background-color: #f2f6ff;
-  padding: 60px 20px;
+  padding: 60px ;
   text-align: center;
 }
 
@@ -426,6 +427,7 @@ body {
 }
 
 .tools-grid {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -435,7 +437,7 @@ body {
 .tool-card {
   background-color: #e3ecfc;
   padding: 20px;
-  width: 380px;
+  width: 30%;
   border-radius: 10px;
   text-align: left;
 }
@@ -991,11 +993,17 @@ body {
     font-size: 14px;
   }
   /* tools grid */
+  .tools-section{
+    padding: 10px;
+  }
   .tools-grid {
     flex-direction: column;
     align-items: center;
+    
   }
-
+ .tool-card{
+  width: 95%;
+ }
   .tools-section h2 {
     font-size: 24px;
   }
