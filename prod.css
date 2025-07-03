@@ -1,0 +1,152 @@
+body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      
+    }
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4b014e;
+  padding: 20px 40px;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 28px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: #320032;
+}
+
+#currency-select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+}
+
+.start-selling {
+  background-color: white;
+  color: #4b014e;
+  padding: 8px 14px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.start-selling:hover {
+  background-color: #f1c4f4;
+}
+/* products */
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      width: 280px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .card p {
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    .card .price {
+      color: green;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .card button {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border: none;
+      background-color: purple;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .message {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: green;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: none;
+      z-index: 1000;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        width: 90%;
+      }
+     
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #4b014e;
+    width: 100%;
+    display: none;
+    padding: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+    }

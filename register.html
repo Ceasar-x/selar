@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selar Registration</title>
+  <link rel="stylesheet" href="reg.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <h2>Create your Selar account</h2>
+      <p class="login-link">Already have an account? <a href="login.html">Log in</a></p>
+
+      <form id="registrationForm" novalidate>
+        <div class="form-group">
+          <input type="text" id="firstName" placeholder="First Name" />
+          <input type="text" id="lastName" placeholder="Last Name" />
+        </div>
+
+        <input type="text" id="email" placeholder="Email Address" />
+
+        <input type="text" id="password" placeholder="Password" />
+
+        <input type="text" id="confirmPassword" placeholder="Confirm password" />
+
+        <label class="checkbox">
+          <input type="checkbox" id="agreement" />
+          I agree to the <a href="#">privacy policy</a> and <a href="#">terms & conditions</a>
+        </label>
+
+        <button type="submit" class="submit-btn">Create account</button>
+
+        <div class="separator"><span>OR</span></div>
+
+        <button type="button" class="social google">Sign up with Google</button>
+        <button type="button" class="social twitter">Sign up with X (or Twitter)</button>
+        <button type="button" class="social facebook">Sign up with Facebook</button>
+      </form>
+    </div>
+
+    <div class="right-panel">
+      <img src="/selimg/regimg1.png" alt="Right Panel" />
+    </div>
+  </div>
+
+  <script src="reg.js"></script>
+</body>
+</html>

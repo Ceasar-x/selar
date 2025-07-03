@@ -1,0 +1,26 @@
+Good [morning/afternoon], and thank you for the opportunity to share this project with you.
+
+Over the past few months, I’ve been fully immersed in learning HTML, CSS, and JavaScript, and this website is a reflection of everything I’ve been able to grasp and apply so far. Rather than just build a series of small tasks or isolated designs, I wanted to challenge myself with a real-world project — something that could simulate an actual product. That’s what led me to create this Selar-style e-commerce website.
+
+The website is designed to mimic an online platform where users can sell and buy digital products, particularly modern novels in this case. Every part of it — from structure to style to interactivity — was built by me using only front-end technologies.
+
+When you first visit the homepage, you're greeted with a clean and responsive design. It features a strong introductory section with curved and decorative SVG backgrounds to enhance visual appeal. I also included a “Start Selling” call-to-action, which leads directly to the registration page, just like you’d expect in a real SaaS product.
+
+The navigation bar at the top works seamlessly across all screen sizes. It includes key links to other pages like Products, Preview, and Cart, and even includes a currency selector dropdown to mimic international readiness. On smaller screens, the nav collapses into a hamburger menu for accessibility and a better user experience — something I handled with both JavaScript and responsive CSS techniques.
+
+The heart of the site is the Products page, where I display 20 unique novel cards. Each card dynamically pulls from a JavaScript array and shows the book’s image, title, author, description, and price. Every card has two action buttons — one to preview the book, and the other to add it to the cart.
+
+Clicking Preview takes you to a dedicated preview page. The product information is passed via query parameters, then extracted and displayed cleanly. The layout is centered and styled to match the overall theme, showing the full image, author, and description of the novel selected.
+
+If you choose to Add to Cart, that product is stored in the browser’s localStorage, ensuring that even if you refresh the page, your cart items remain intact. Then, when you visit the Cart page, you’ll see every item you’ve added, neatly listed with titles, authors, prices, and descriptions. I also added the ability to remove items from the cart, with changes reflected immediately without any reloads beyond that single interaction.
+
+Throughout the site, I paid close attention to responsiveness and accessibility, ensuring that whether it’s viewed on a desktop, tablet, or phone, it adapts perfectly. I also included a custom favicon to give it a real sense of identity, so it feels like a complete and branded product.
+
+This project helped me consolidate all the skills I’ve learned — from structuring HTML effectively, styling layouts with CSS including Flexbox and media queries, to building interactive, real-time features with JavaScript like cart storage and dynamic page rendering.
+
+I faced challenges along the way — especially around passing data between pages and managing state in the cart — but working through those issues taught me how to debug better, structure my code more cleanly, and think in terms of user flow.
+
+Overall, this project is more than just a technical assignment. It’s a showcase of what I’ve learned, what I’m capable of building independently, and a solid foundation I can continue to build upon as I grow in this field.
+
+Thank you again for taking the time to look at it. I’m excited to hear your thoughts.
+

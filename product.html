@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="prod.css">
+  <title>Novel Store</title>
+  
+</head>
+<body>
+   <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Selar</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="product.html" class="nav-link">Products</a>
+      <a href="preview.html" class="nav-link">Preview</a>
+      <a href="cart.html" class="nav-link">Cart</a>
+      <select id="currency-select">
+        <option value="NGN">🇳🇬 NGN</option>
+        <option value="USD">🇺🇸 USD</option>
+        <option value="GHS">🇬🇭 GHS</option>
+        <option value="KES">🇰🇪 KES</option>
+        <option value="GBP">🇬🇧 GBP</option>
+      </select>
+      <a href="login.html" class="nav-link">Log In</a>
+      <a href="register.html" class="start-selling">Start Selling</a>
+    </nav>
+  </header>
+
+  <h1>Our Novel Collection</h1>
+  <div class="message" id="message">Product added to cart</div>
+  <div class="product-grid" id="productGrid"></div>
+
+  <script src="products.js"></script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <title>Your Cart</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    /* Navbar */
+    .navbar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #4b014e;
+      padding: 15px 20px;
+      color: white;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .menu-toggle i {
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background-color: #320032;
+    }
+
+    #currency-select {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: none;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .start-selling {
+      background-color: white;
+      color: #4b014e;
+      padding: 8px 14px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .start-selling:hover {
+      background-color: #f1c4f4;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 2rem;
+    }
+
+    #cart-items {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .cart-item h3 {
+      margin-bottom: 8px;
+    }
+
+    .cart-item p {
+      margin: 4px 0;
+      color: #444;
+    }
+
+    .cart-item .price {
+      font-weight: bold;
+      color: green;
+    }
+
+    .cart-item button {
+      margin-top: 12px;
+      padding: 10px 16px;
+      background-color: crimson;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: fit-content;
+      align-self: flex-start;
+    }
+
+    .cart-item button:hover {
+      background-color: darkred;
+    }
+
+    .empty {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-top: 50px;
+      color: #777;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #4b014e;
+        width: 100%;
+        display: none;
+        padding: 10px 20px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .cart-item {
+        padding: 16px;
+      }
+
+      .cart-item button {
+        width: 100%;
+        align-self: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Selar</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="product.html" class="nav-link">Products</a>
+      <a href="preview.html" class="nav-link">Preview</a>
+      <a href="cart.html" class="nav-link">Cart</a>
+      <select id="currency-select">
+        <option value="NGN">🇳🇬 NGN</option>
+        <option value="USD">🇺🇸 USD</option>
+        <option value="GHS">🇬🇭 GHS</option>
+        <option value="KES">🇰🇪 KES</option>
+        <option value="GBP">🇬🇧 GBP</option>
+      </select>
+      <a href="login.html" class="nav-link">Log In</a>
+      <a href="register.html" class="start-selling">Start Selling</a>
+    </nav>
+  </header>
+
+  <h1>Your Cart</h1>
+  <div id="cart-items"></div>
+
+  <script>
+    // Highlight active navbar link
+    document.addEventListener('DOMContentLoaded', function () {
+      const links = document.querySelectorAll('.nav-link');
+      const currentPath = window.location.pathname;
+      links.forEach(link => {
+        if (link.href.includes(currentPath.split("/").pop())) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Toggle navbar for small screens
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      const nav = document.getElementById('nav-links');
+      nav.classList.toggle('show');
+    });
+
+    // Load cart
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartContainer = document.getElementById("cart-items");
+
+    if (cartItems.length === 0) {
+      cartContainer.innerHTML = "<p class='empty'>Your cart is empty.</p>";
+    } else {
+      cartItems.forEach((item, index) => {
+        const div = document.createElement("div");
+        div.className = "cart-item";
+        div.innerHTML = `
+          <h3>${item.name}</h3>
+          <p><strong>Author:</strong> ${item.author}</p>
+          <p>${item.description}</p>
+          <p class="price">${item.price}</p>
+          <button onclick="removeItem(${index})">Remove</button>
+        `;
+        cartContainer.appendChild(div);
+      });
+    }
+
+    function removeItem(index) {
+      cartItems.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+      location.reload();
+    }
+  </script>
+</body>
+</html>
